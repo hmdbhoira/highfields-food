@@ -1,0 +1,218 @@
+---
+import Layout from '../components/Layout.astro';
+---
+
+<Layout title="About Us">
+  <!-- Page Header -->
+  <section class="py-16 bg-gradient-to-br from-[var(--forest-green)] to-[var(--burgundy)] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-5xl font-bold mb-4">Our Story</h1>
+      <p class="text-xl opacity-90 max-w-2xl mx-auto">
+        A journey rooted in tradition, driven by innovation
+      </p>
+    </div>
+  </section>
+
+  <!-- Brand Story -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-lg max-w-none">
+        <div class="text-center mb-12">
+          <div class="inline-block w-20 h-20 bg-[var(--burgundy)] rounded-full flex items-center justify-center mb-6">
+            <span class="text-4xl font-bold text-white">H</span>
+          </div>
+          <h2 class="text-3xl font-bold text-[var(--dark-brown)] mb-4">Food For Thought</h2>
+        </div>
+
+        <div class="space-y-6 text-[var(--brown)] text-lg leading-relaxed">
+          <p>
+            In 2015, Highfields began with a simple yet powerful vision: to honor the timeless tradition
+            of dates while reimagining them for the modern palate. What started as a small-scale operation
+            focused on premium quality dates has blossomed into a brand that celebrates innovation without
+            forgetting its roots.
+          </p>
+
+          <p>
+            The date palm has been a symbol of sustenance and hospitality in Middle Eastern culture for
+            millennia. At Highfields, we saw an opportunity to take this ancient superfood and transform
+            it into something unexpected—sparkling beverages that capture the natural sweetness of dates
+            while delivering a refreshing, fizzy experience that resonates with contemporary tastes.
+          </p>
+
+          <p>
+            Our journey from dates to chocolates and beverages reflects our commitment to exploration
+            and excellence. Each product in our portfolio is carefully crafted to showcase the versatility
+            and nutritional richness of dates, whether enjoyed in their natural form, infused with premium
+            walnuts, or transformed into bold, refreshing drinks.
+          </p>
+
+          <p>
+            Based in Dubai, UAE, we source only the finest ingredients and adhere to the highest quality
+            standards. Every Highfields product is a testament to our belief that tradition and innovation
+            can coexist beautifully—creating food and beverages that are not just consumed, but experienced.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Values -->
+  <section class="py-20 bg-[var(--cream)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-[var(--dark-brown)] mb-4">Our Values</h2>
+        <p class="text-lg text-[var(--brown)]">The principles that guide everything we do</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Quality -->
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+          <div class="w-16 h-16 bg-[var(--burgundy)] rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[var(--dark-brown)] mb-3">Premium Quality</h3>
+          <p class="text-[var(--brown)]">
+            We never compromise on the quality of our ingredients or the excellence of our products
+          </p>
+        </div>
+
+        <!-- Innovation -->
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+          <div class="w-16 h-16 bg-[var(--orange)] rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[var(--dark-brown)] mb-3">Innovation</h3>
+          <p class="text-[var(--brown)]">
+            We continuously explore new ways to present traditional ingredients in exciting, modern formats
+          </p>
+        </div>
+
+        <!-- Tradition -->
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+          <div class="w-16 h-16 bg-[var(--forest-green)] rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[var(--dark-brown)] mb-3">Tradition</h3>
+          <p class="text-[var(--brown)]">
+            Rooted in the rich heritage of Middle Eastern culture and the timeless value of dates
+          </p>
+        </div>
+
+        <!-- Sustainability -->
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+          <div class="w-16 h-16 bg-[var(--gold)] rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[var(--dark-brown)] mb-3">Integrity</h3>
+          <p class="text-[var(--brown)]">
+            Honest, transparent practices in everything from sourcing to production to customer service
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-[var(--dark-brown)] mb-4">Our Journey</h2>
+        <p class="text-lg text-[var(--brown)]">From humble beginnings to innovation</p>
+      </div>
+
+      <div class="space-y-12">
+        <!-- 2015 -->
+        <div class="flex gap-8 items-start">
+          <div class="flex-shrink-0 w-24 text-right">
+            <span class="text-2xl font-bold text-[var(--burgundy)]">2015</span>
+          </div>
+          <div class="flex-shrink-0 w-4 h-4 bg-[var(--burgundy)] rounded-full mt-2"></div>
+          <div class="flex-grow">
+            <h3 class="text-xl font-bold text-[var(--dark-brown)] mb-2">The Beginning</h3>
+            <p class="text-[var(--brown)]">
+              Highfields was born with a focus on premium quality dates, starting small but dreaming big.
+              Our commitment to excellence was evident from day one.
+            </p>
+          </div>
+        </div>
+
+        <!-- Growth -->
+        <div class="flex gap-8 items-start">
+          <div class="flex-shrink-0 w-24 text-right">
+            <span class="text-2xl font-bold text-[var(--forest-green)]">2019</span>
+          </div>
+          <div class="flex-shrink-0 w-4 h-4 bg-[var(--forest-green)] rounded-full mt-2"></div>
+          <div class="flex-grow">
+            <h3 class="text-xl font-bold text-[var(--dark-brown)] mb-2">Expansion & Innovation</h3>
+            <p class="text-[var(--brown)]">
+              We expanded our product line to include gourmet dates with walnuts and began exploring
+              innovative ways to present this ancient superfood to modern consumers.
+            </p>
+          </div>
+        </div>
+
+        <!-- Beverages -->
+        <div class="flex gap-8 items-start">
+          <div class="flex-shrink-0 w-24 text-right">
+            <span class="text-2xl font-bold text-[var(--orange)]">2025</span>
+          </div>
+          <div class="flex-shrink-0 w-4 h-4 bg-[var(--orange)] rounded-full mt-2"></div>
+          <div class="flex-grow">
+            <h3 class="text-xl font-bold text-[var(--dark-brown)] mb-2">Beverage Revolution</h3>
+            <p class="text-[var(--brown)]">
+              The launch of our signature Dates Sparkling Drink marked a turning point—tradition met
+              innovation in a refreshing new format that captured hearts and taste buds.
+            </p>
+          </div>
+        </div>
+
+        <!-- Today -->
+        <div class="flex gap-8 items-start">
+          <div class="flex-shrink-0 w-24 text-right">
+            <span class="text-2xl font-bold text-[var(--gold)]">Today</span>
+          </div>
+          <div class="flex-shrink-0 w-4 h-4 bg-[var(--gold)] rounded-full mt-2"></div>
+          <div class="flex-grow">
+            <h3 class="text-xl font-bold text-[var(--dark-brown)] mb-2">Growing Forward</h3>
+            <p class="text-[var(--brown)]">
+              Highfields continues to innovate while staying true to our roots, offering a diverse range
+              of products that honor tradition and embrace the future.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-[var(--burgundy)] to-[var(--brown)] text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-bold mb-6">Join Our Journey</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Experience the Highfields difference for yourself
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href="/products"
+          class="bg-white text-[var(--burgundy)] px-8 py-3 rounded-lg font-semibold hover:bg-[var(--cream)] transition-colors"
+        >
+          View Products
+        </a>
+        <a
+          href="/contact"
+          class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[var(--burgundy)] transition-all"
+        >
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,16 +1,248 @@
 ---
-
+import Layout from '../components/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Home">
+  <!-- Hero Section -->
+  <section class="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-[var(--cream)] via-white to-[var(--orange)]/5 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgc3Ryb2tlPSIjOEIyNjM1IiBzdHJva2Utb3BhY2l0eT0iLjA1Ii8+PC9nPjwvc3ZnPg==')] opacity-40"></div>
+
+    <div class="w-full max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Text Content -->
+        <div class="text-center lg:text-left flex flex-col justify-center" style="animation: fadeInUp 0.8s ease-out;">
+          <div class="inline-block px-12 py-4 bg-[var(--burgundy)] text-white text-sm font-semibold rounded-full mb-8 shadow-lg mx-auto lg:mx-0 w-fit">
+            Premium Quality Since 2015
+          </div>
+          <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-[var(--dark-brown)] leading-[1.1] mb-8">
+            Shake Up<br />
+            Your Day,<br />
+            <span class="text-[var(--burgundy)] block mt-3">the Highfields Way!</span>
+          </h1>
+          <p class="text-lg sm:text-xl md:text-2xl text-[var(--brown)] mb-12 leading-relaxed mx-auto lg:mx-0 max-w-xl">
+            Experience the natural sweetness of dates in every sip. <span class="font-semibold">Bold. Refreshing. Unexpected.</span>
+          </p>
+          <div class="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
+            <a
+              href="/products"
+              class="inline-block bg-[var(--burgundy)] text-white px-16 py-6 rounded-full font-bold text-lg hover:bg-[var(--brown)] transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl text-center"
+            >
+              Explore Products
+            </a>
+            <a
+              href="/about"
+              class="inline-block border-3 border-[var(--burgundy)] text-[var(--burgundy)] px-16 py-6 rounded-full font-bold text-lg hover:bg-[var(--burgundy)] hover:text-white transform hover:scale-105 transition-all duration-300 text-center"
+              style="border-width: 3px;"
+            >
+              Our Story
+            </a>
+          </div>
+        </div>
+
+        <!-- Product Image -->
+        <div class="relative flex items-center justify-center" style="animation: fadeInRight 1s ease-out;">
+          <div class="relative w-full max-w-md lg:max-w-lg mx-auto">
+            <!-- Decorative circle background -->
+            <div class="absolute inset-0 bg-gradient-to-br from-[var(--burgundy)]/20 to-[var(--orange)]/20 rounded-full blur-3xl scale-110"></div>
+            <div class="absolute -inset-4 bg-[var(--burgundy)]/10 rounded-full blur-2xl animate-pulse"></div>
+
+            <img
+              src="/images/Highfields_Dates_Sparkling_Drink.jpeg"
+              alt="Highfields Dates Sparkling Drink"
+              class="relative z-10 w-full drop-shadow-2xl hover:scale-110 transition-transform duration-500 ease-out"
+              style="filter: drop-shadow(0 25px 50px rgba(139, 38, 53, 0.3));"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add keyframe animations -->
+    <style>
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </section>
+
+  <!-- Tagline Section -->
+  <section class="py-16 bg-[var(--burgundy)] text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Food For Thought</h2>
+      <p class="text-xl opacity-90">
+        Where tradition meets innovation in every refreshing moment
+      </p>
+    </div>
+  </section>
+
+  <!-- Featured Product Section -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="inline-block px-12 py-4 bg-[var(--orange)]/10 text-[var(--orange)] text-sm font-semibold rounded-full mb-4">
+          SPOTLIGHT
+        </span>
+        <h2 class="text-5xl md:text-6xl font-black text-[var(--dark-brown)] mb-6">Featured Product</h2>
+        <p class="text-xl text-[var(--brown)] max-w-2xl mx-auto">Discover our signature Dates Sparkling Drink</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center bg-gradient-to-br from-[var(--cream)] to-white rounded-3xl p-8 md:p-16 shadow-2xl">
+        <div class="order-2 lg:order-1">
+          <h3 class="text-4xl md:text-5xl font-black text-[var(--dark-brown)] mb-6 leading-tight">
+            Dates Sparkling<br />Drink
+          </h3>
+          <p class="text-lg md:text-xl text-[var(--brown)] mb-8 leading-relaxed">
+            Experience a unique blend of natural date palm juice concentrate with a refreshing fizzy twist.
+            Our sparkling drink captures the authentic sweetness of dates while delivering an unexpected
+            carbonated sensation.
+          </p>
+          <ul class="space-y-5 mb-10">
+            <li class="flex items-start text-lg md:text-xl">
+              <svg class="w-8 h-8 text-[var(--forest-green)] mr-4 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-[var(--brown)]"><strong class="text-[var(--dark-brown)]">Bold & Refreshing</strong> flavor</span>
+            </li>
+            <li class="flex items-start text-lg md:text-xl">
+              <svg class="w-8 h-8 text-[var(--forest-green)] mr-4 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-[var(--brown)]">Natural <strong class="text-[var(--dark-brown)]">date palm juice</strong></span>
+            </li>
+            <li class="flex items-start text-lg md:text-xl">
+              <svg class="w-8 h-8 text-[var(--forest-green)] mr-4 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-[var(--brown)]"><strong class="text-[var(--dark-brown)]">Premium Quality</strong> ingredients</span>
+            </li>
+            <li class="flex items-start text-lg md:text-xl">
+              <svg class="w-8 h-8 text-[var(--forest-green)] mr-4 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-[var(--brown)]"><strong class="text-[var(--dark-brown)]">250ml</strong> perfect serving</span>
+            </li>
+          </ul>
+          <a
+            href="/products"
+            class="inline-block bg-[var(--orange)] text-white px-16 py-6 rounded-full font-bold text-lg hover:bg-[var(--burgundy)] transform hover:scale-105 transition-all duration-300 shadow-xl"
+          >
+            View All Products
+          </a>
+        </div>
+
+        <div class="order-1 lg:order-2 flex justify-center">
+          <div class="relative">
+            <div class="absolute inset-0 bg-[var(--burgundy)]/10 rounded-3xl blur-2xl"></div>
+            <img
+              src="/images/Highfields_Dates_Sparkling_Drink.jpeg"
+              alt="Dates Sparkling Drink"
+              class="relative z-10 w-full max-w-md mx-auto rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="py-24 bg-gradient-to-b from-[var(--cream)] to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-20">
+        <span class="inline-block px-12 py-4 bg-[var(--burgundy)]/10 text-[var(--burgundy)] text-sm font-semibold rounded-full mb-4">
+          OUR PROMISE
+        </span>
+        <h2 class="text-5xl md:text-6xl font-black text-[var(--dark-brown)] mb-6">Why Choose Highfields?</h2>
+        <p class="text-xl text-[var(--brown)] max-w-2xl mx-auto">Quality and tradition in every product</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <!-- Premium Quality -->
+        <div class="text-center p-10 bg-white rounded-3xl shadow-xl hover:shadow-2xl hover:transform hover:scale-105 transition-all duration-300 border border-gray-100">
+          <div class="w-24 h-24 bg-gradient-to-br from-[var(--burgundy)] to-[var(--burgundy)]/80 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-black text-[var(--dark-brown)] mb-4">Premium Quality</h3>
+          <p class="text-lg text-[var(--brown)] leading-relaxed">
+            Only the finest ingredients sourced with care for exceptional taste and nutrition
+          </p>
+        </div>
+
+        <!-- Traditional Roots -->
+        <div class="text-center p-10 bg-white rounded-3xl shadow-xl hover:shadow-2xl hover:transform hover:scale-105 transition-all duration-300 border border-gray-100">
+          <div class="w-24 h-24 bg-gradient-to-br from-[var(--forest-green)] to-[var(--forest-green)]/80 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-black text-[var(--dark-brown)] mb-4">Traditional Roots</h3>
+          <p class="text-lg text-[var(--brown)] leading-relaxed">
+            Honoring time-tested methods while bringing innovation to every product
+          </p>
+        </div>
+
+        <!-- Customer Focus -->
+        <div class="text-center p-10 bg-white rounded-3xl shadow-xl hover:shadow-2xl hover:transform hover:scale-105 transition-all duration-300 border border-gray-100">
+          <div class="w-24 h-24 bg-gradient-to-br from-[var(--orange)] to-[var(--orange)]/80 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-black text-[var(--dark-brown)] mb-4">Made with Care</h3>
+          <p class="text-lg text-[var(--brown)] leading-relaxed">
+            Every product is crafted with attention to detail and genuine passion
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="relative py-32 bg-gradient-to-r from-[var(--burgundy)] via-[var(--brown)] to-[var(--burgundy)] text-white overflow-hidden">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utb3BhY2l0eT0iLjEiLz48L2c+PC9zdmc+')] opacity-20"></div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <h2 class="text-5xl md:text-7xl font-black mb-8 leading-tight">
+        Ready to Experience<br />
+        <span class="text-[var(--orange)]">Highfields?</span>
+      </h2>
+      <p class="text-xl md:text-2xl mb-12 opacity-95 max-w-3xl mx-auto leading-relaxed">
+        Discover our range of premium dates and refreshing beverages that honor tradition while embracing innovation
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-6">
+        <a
+          href="/products"
+          class="inline-block bg-white text-[var(--burgundy)] px-16 py-6 rounded-full font-bold text-lg hover:bg-[var(--cream)] hover:scale-105 transform transition-all duration-300 shadow-2xl"
+        >
+          Shop Now
+        </a>
+        <a
+          href="/contact"
+          class="inline-block border-3 border-white text-white px-16 py-6 rounded-full font-bold text-lg hover:bg-white hover:text-[var(--burgundy)] hover:scale-105 transform transition-all duration-300"
+          style="border-width: 3px;"
+        >
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

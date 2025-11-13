@@ -1,1 +1,119 @@
 @import "tailwindcss";
+
+/* Highfields Brand Colors */
+:root {
+  --burgundy: #8B2635;
+  --brown: #5C3317;
+  --forest-green: #2F5D4E;
+  --orange: #E37B40;
+  --cream: #F5F1E8;
+  --gold: #D4AF37;
+  --dark-brown: #3E2723;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--cream);
+  color: var(--dark-brown);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Ensure proper z-index stacking */
+nav {
+  position: relative;
+  z-index: 1000;
+}
+
+/* Fix button and link styling */
+button,
+a {
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Smooth transitions */
+a,
+button {
+  transition: all 0.3s ease;
+}
+
+/* Image optimization */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Navigation hover effects */
+nav a:hover {
+  color: var(--burgundy) !important;
+}
+
+/* Ensure flex spacing works */
+.space-x-8 > * + * {
+  margin-left: 2rem;
+}
+
+.space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+
+.space-y-2 > * + * {
+  margin-top: 0.5rem;
+}
+
+.space-y-3 > * + * {
+  margin-top: 0.75rem;
+}
+
+.space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.gap-12 {
+  gap: 3rem;
+}
+
+/* Grid gaps */
+.grid {
+  display: grid;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .md\:hidden {
+    display: none !important;
+  }
+
+  .md\:flex {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .hidden.md\:flex {
+    display: flex !important;
+  }
+
+  .md\:hidden {
+    display: none !important;
+  }
+}

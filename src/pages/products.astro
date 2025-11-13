@@ -1,0 +1,209 @@
+---
+import Layout from '../components/Layout.astro';
+
+const products = [
+  {
+    id: 1,
+    name: 'Dates Sparkling Drink',
+    category: 'Beverages',
+    description: 'Bold, refreshing, and unexpected. Our signature sparkling drink takes the natural sweetness of dates and gives it a fizzy twist. A guilt-free pop with tradition meeting modern sparkle.',
+    image: '/images/Highfields_Dates_Sparkling_Drink.jpeg',
+    size: '250ml',
+    features: ['Date Palm Juice Concentrate', 'Carbonated', 'Premium Quality', 'Bold & Refreshing'],
+    inStock: true,
+  },
+  {
+    id: 2,
+    name: 'Dates Milkshake',
+    category: 'Beverages',
+    description: 'Creamy, indulgent, and naturally sweet. Our dates milkshake is low in sugar but high in flavor, combining smooth milk with the rich taste of premium dates.',
+    image: '/images/Highfields_Dates_Milkshake.jpeg',
+    size: '250ml',
+    features: ['Low in Sugar', 'Creamy Texture', 'Natural Sweetness', 'Ready to Drink'],
+    inStock: false,
+  },
+  {
+    id: 3,
+    name: 'Dates with Walnuts',
+    category: 'Dates',
+    description: 'Sinfully delicious! Premium dates infused with crunchy walnuts, offering a perfect balance of soft and crunchy, sweet and nutty.',
+    image: '/images/Highfields_Dates_with_walnuts.jpg',
+    size: '400g',
+    features: ['Gourmet Quality', 'Walnut Infused', 'Rich in Nutrients', 'Perfect Gift'],
+    inStock: false,
+  },
+  {
+    id: 4,
+    name: 'Omani Seedless Dates',
+    category: 'Dates',
+    description: 'Sinfully delicious! Premium Omani dates, carefully selected and packaged. Natural sweetness and soft texture in every bite.',
+    image: '/images/Highfields_Omani_Seedless_Dates.jpg',
+    size: '500g',
+    features: ['Seedless', 'Omani Origin', 'Gourmet Quality', 'Naturally Sweet'],
+    inStock: false,
+  },
+];
+---
+
+<Layout title="Products">
+  <!-- Page Header -->
+  <section class="py-16 bg-gradient-to-br from-[var(--burgundy)] to-[var(--brown)] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-5xl font-bold mb-4">Our Products</h1>
+      <p class="text-xl opacity-90 max-w-2xl mx-auto">
+        Discover our range of premium dates and refreshing beverages, crafted with care and quality
+      </p>
+    </div>
+  </section>
+
+  <!-- Products Grid -->
+  <section class="py-20 bg-[var(--cream)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Beverages Section -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold text-[var(--dark-brown)] mb-8">Beverages</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {products.filter(p => p.category === 'Beverages').map((product) => (
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow">
+              {/* Out of Stock Badge */}
+              {!product.inStock && (
+                <div class="absolute top-4 left-4 z-10">
+                  <span class="bg-[var(--brown)] text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    Out of Stock
+                  </span>
+                </div>
+              )}
+
+              <div class="relative h-96 bg-gradient-to-br from-[var(--cream)] to-white flex items-center justify-center p-8">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  class={`max-h-full w-auto object-contain ${!product.inStock ? 'opacity-50' : ''}`}
+                />
+              </div>
+
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <h3 class="text-2xl font-bold text-[var(--dark-brown)]">{product.name}</h3>
+                  <span class="text-sm text-[var(--brown)] bg-[var(--cream)] px-3 py-1 rounded-full">
+                    {product.size}
+                  </span>
+                </div>
+
+                <p class="text-[var(--brown)] mb-6">{product.description}</p>
+
+                <div class="space-y-2 mb-6">
+                  {product.features.map((feature) => (
+                    <div class="flex items-center text-sm text-[var(--brown)]">
+                      <svg class="w-5 h-5 text-[var(--forest-green)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                      </svg>
+                      {feature}
+                    </div>
+                  ))}
+                </div>
+
+                {product.inStock ? (
+                  <a
+                    href="/contact"
+                    class="block w-full text-center bg-[var(--burgundy)] text-white py-3 rounded-lg font-semibold hover:bg-[var(--brown)] transition-colors"
+                  >
+                    Contact for Orders
+                  </a>
+                ) : (
+                  <button
+                    disabled
+                    class="block w-full text-center bg-gray-400 text-white py-3 rounded-lg font-semibold cursor-not-allowed"
+                  >
+                    Currently Unavailable
+                  </button>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Dates Section -->
+      <div>
+        <h2 class="text-3xl font-bold text-[var(--dark-brown)] mb-8">Dates</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {products.filter(p => p.category === 'Dates').map((product) => (
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow relative">
+              {/* Out of Stock Badge */}
+              {!product.inStock && (
+                <div class="absolute top-4 left-4 z-10">
+                  <span class="bg-[var(--brown)] text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    Out of Stock
+                  </span>
+                </div>
+              )}
+
+              <div class="relative h-96 bg-gradient-to-br from-[var(--cream)] to-white flex items-center justify-center p-8">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  class={`max-h-full w-auto object-contain ${!product.inStock ? 'opacity-50' : ''}`}
+                />
+              </div>
+
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <h3 class="text-2xl font-bold text-[var(--dark-brown)]">{product.name}</h3>
+                  <span class="text-sm text-[var(--brown)] bg-[var(--cream)] px-3 py-1 rounded-full">
+                    {product.size}
+                  </span>
+                </div>
+
+                <p class="text-[var(--brown)] mb-6">{product.description}</p>
+
+                <div class="space-y-2 mb-6">
+                  {product.features.map((feature) => (
+                    <div class="flex items-center text-sm text-[var(--brown)]">
+                      <svg class="w-5 h-5 text-[var(--forest-green)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                      </svg>
+                      {feature}
+                    </div>
+                  ))}
+                </div>
+
+                {product.inStock ? (
+                  <a
+                    href="/contact"
+                    class="block w-full text-center bg-[var(--burgundy)] text-white py-3 rounded-lg font-semibold hover:bg-[var(--brown)] transition-colors"
+                  >
+                    Contact for Orders
+                  </a>
+                ) : (
+                  <button
+                    disabled
+                    class="block w-full text-center bg-gray-400 text-white py-3 rounded-lg font-semibold cursor-not-allowed"
+                  >
+                    Currently Unavailable
+                  </button>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-[var(--dark-brown)] mb-4">Interested in Our Products?</h2>
+      <p class="text-lg text-[var(--brown)] mb-8">
+        Get in touch with us for orders, inquiries, or partnership opportunities
+      </p>
+      <a
+        href="/contact"
+        class="inline-block bg-[var(--burgundy)] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[var(--brown)] transition-colors"
+      >
+        Contact Us
+      </a>
+    </div>
+  </section>
+</Layout>
