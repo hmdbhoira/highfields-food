@@ -59,7 +59,6 @@ import Layout from '../components/Layout.astro';
               class="absolute inset-0 z-20 w-full h-full object-contain drop-shadow-2xl transition-all duration-500 ease-out opacity-0 pointer-events-none"
               style="filter: drop-shadow(0 25px 50px rgba(139, 38, 53, 0.3));"
               muted
-              loop
               playsinline
             ></video>
           </div>
@@ -92,28 +91,85 @@ import Layout from '../components/Layout.astro';
       }
     </style>
 
-    <!-- Product media hover script -->
+    <!-- Product media script -->
     <script>
       const container = document.getElementById('product-media-container');
       const image = document.getElementById('product-image');
       const video = document.getElementById('product-video') as HTMLVideoElement;
 
-      container?.addEventListener('mouseenter', () => {
-        if (video) {
-          video.classList.remove('opacity-0', 'pointer-events-none');
-          video.classList.add('opacity-100');
-          video.play();
-        }
-      });
+      // Detect if device is mobile/touch-enabled
+      const isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-      container?.addEventListener('mouseleave', () => {
-        if (video) {
-          video.pause();
-          video.currentTime = 0;
-          video.classList.remove('opacity-100');
-          video.classList.add('opacity-0', 'pointer-events-none');
+      if (isMobile) {
+        // Mobile: Use Intersection Observer
+        let hasPlayed = false;
+
+        const playVideo = () => {
+          if (video) {
+            video.classList.remove('opacity-0', 'pointer-events-none');
+            video.classList.add('opacity-100');
+            video.play();
+
+            // When video ends, hide it and show image
+            const handleEnded = () => {
+              video.classList.remove('opacity-100');
+              video.classList.add('opacity-0', 'pointer-events-none');
+              video.currentTime = 0;
+            };
+
+            video.addEventListener('ended', handleEnded, { once: true });
+          }
+        };
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting && entry.intersectionRatio === 1.0) {
+                // Container is fully visible
+                if (!hasPlayed) {
+                  hasPlayed = true;
+                  playVideo();
+                }
+              } else {
+                // Container left viewport - reset for next time
+                hasPlayed = false;
+              }
+            });
+          },
+          {
+            threshold: 1.0 // Trigger only when 100% of container is visible
+          }
+        );
+
+        if (container) {
+          observer.observe(container);
+
+          // Add click handler to replay video
+          container.addEventListener('click', () => {
+            playVideo();
+          });
         }
-      });
+      } else {
+        // Desktop: Use hover behavior with looping
+        container?.addEventListener('mouseenter', () => {
+          if (video) {
+            video.loop = true; // Enable looping for desktop
+            video.classList.remove('opacity-0', 'pointer-events-none');
+            video.classList.add('opacity-100');
+            video.play();
+          }
+        });
+
+        container?.addEventListener('mouseleave', () => {
+          if (video) {
+            video.pause();
+            video.currentTime = 0;
+            video.loop = false; // Disable looping when not hovering
+            video.classList.remove('opacity-100');
+            video.classList.add('opacity-0', 'pointer-events-none');
+          }
+        });
+      }
     </script>
   </section>
 

@@ -90,3 +90,14 @@ nav a:hover {
 .grid {
   display: grid;
 }
+
+/* Responsive utilities - ensure they work correctly */
+@media (min-width: 768px) {
+  .md\:hidden {
+    display: none !important;
+  }
+
+  .hidden.md\:flex {
+    display: flex !important;
+  }
+}
