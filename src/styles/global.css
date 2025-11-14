@@ -27,11 +27,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Ensure proper z-index stacking */
-nav {
-  position: relative;
-  z-index: 1000;
-}
 
 /* Fix button and link styling */
 button,
