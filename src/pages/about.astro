@@ -19,7 +19,7 @@ import Layout from '../components/Layout.astro';
       <div class="prose prose-lg max-w-none">
         <div class="text-center mb-12">
           <div class="inline-block mb-6">
-            <img src="/images/Highfields_icon.png" alt="Highfields Icon" class="w-20 h-20" />
+            <img src={`${import.meta.env.BASE_URL}images/Highfields_icon.png`} alt="Highfields Icon" class="w-20 h-20" />
           </div>
           <h2 class="text-3xl font-bold text-[var(--dark-brown)] mb-4">Food For Thought</h2>
         </div>
@@ -201,13 +201,13 @@ import Layout from '../components/Layout.astro';
       </p>
       <div class="flex flex-wrap justify-center gap-4">
         <a
-          href="/products"
+          href={`${import.meta.env.BASE_URL}products`}
           class="bg-white text-[var(--burgundy)] px-8 py-3 rounded-lg font-semibold hover:bg-[var(--cream)] transition-colors"
         >
           View Products
         </a>
         <a
-          href="/contact"
+          href={`${import.meta.env.BASE_URL}contact`}
           class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[var(--burgundy)] transition-all"
         >
           Contact Us
