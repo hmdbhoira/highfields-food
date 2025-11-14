@@ -7,6 +7,9 @@ interface Props {
 
 const { title } = Astro.props;
 const currentPath = Astro.url.pathname;
+// Normalize path by removing base URL for active page detection
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, ''); // Remove trailing slash
+const relativePath = currentPath.replace(basePath, '') || '/';
 ---
 
 <!DOCTYPE html>
@@ -34,25 +37,25 @@ const currentPath = Astro.url.pathname;
           <div class="hidden md:flex" style="gap: 2rem;">
             <a
               href={`${import.meta.env.BASE_URL}`}
-              style={`color: var(--dark-brown); padding: 0.5rem 1rem; font-weight: ${currentPath === '/' ? '600' : '400'}; border-bottom: ${currentPath === '/' ? '2px solid var(--burgundy)' : 'none'};`}
+              style={`color: var(--dark-brown); padding: 0.5rem 1rem; font-weight: ${relativePath === '/' ? '600' : '400'}; border-bottom: ${relativePath === '/' ? '2px solid var(--burgundy)' : 'none'};`}
             >
               Home
             </a>
             <a
               href={`${import.meta.env.BASE_URL}products`}
-              style={`color: var(--dark-brown); padding: 0.5rem 1rem; font-weight: ${currentPath === '/products' ? '600' : '400'}; border-bottom: ${currentPath === '/products' ? '2px solid var(--burgundy)' : 'none'};`}
+              style={`color: var(--dark-brown); padding: 0.5rem 1rem; font-weight: ${relativePath === '/products' ? '600' : '400'}; border-bottom: ${relativePath === '/products' ? '2px solid var(--burgundy)' : 'none'};`}
             >
               Products
             </a>
             <a
               href={`${import.meta.env.BASE_URL}about`}
-              style={`color: var(--dark-brown); padding: 0.5rem 1rem; font-weight: ${currentPath === '/about' ? '600' : '400'}; border-bottom: ${currentPath === '/about' ? '2px solid var(--burgundy)' : 'none'};`}
+              style={`color: var(--dark-brown); padding: 0.5rem 1rem; font-weight: ${relativePath === '/about' ? '600' : '400'}; border-bottom: ${relativePath === '/about' ? '2px solid var(--burgundy)' : 'none'};`}
             >
               About
             </a>
             <a
               href={`${import.meta.env.BASE_URL}contact`}
-              style={`color: var(--dark-brown); padding: 0.5rem 1rem; font-weight: ${currentPath === '/contact' ? '600' : '400'}; border-bottom: ${currentPath === '/contact' ? '2px solid var(--burgundy)' : 'none'};`}
+              style={`color: var(--dark-brown); padding: 0.5rem 1rem; font-weight: ${relativePath === '/contact' ? '600' : '400'}; border-bottom: ${relativePath === '/contact' ? '2px solid var(--burgundy)' : 'none'};`}
             >
               Contact
             </a>
