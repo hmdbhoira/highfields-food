@@ -7,7 +7,7 @@ const products = [
     name: 'Dates Sparkling Drink',
     category: 'Beverages',
     description: 'Bold, refreshing, and unexpected. Our signature sparkling drink takes the natural sweetness of dates and gives it a fizzy twist. A guilt-free pop with tradition meeting modern sparkle.',
-    image: '/images/Highfields_Dates_Sparkling_Drink.jpeg',
+    image: `${import.meta.env.BASE_URL}images/Highfields_Dates_Sparkling_Drink.jpeg`,
     size: '250ml',
     features: ['Date Palm Juice Concentrate', 'Carbonated', 'Premium Quality', 'Bold & Refreshing'],
     inStock: true,
@@ -17,7 +17,7 @@ const products = [
     name: 'Dates Milkshake',
     category: 'Beverages',
     description: 'Creamy, indulgent, and naturally sweet. Our dates milkshake is low in sugar but high in flavor, combining smooth milk with the rich taste of premium dates.',
-    image: '/images/Highfields_Dates_Milkshake.jpeg',
+    image: `${import.meta.env.BASE_URL}images/Highfields_Dates_Milkshake.jpeg`,
     size: '250ml',
     features: ['Low in Sugar', 'Creamy Texture', 'Natural Sweetness', 'Ready to Drink'],
     inStock: false,
@@ -27,7 +27,7 @@ const products = [
     name: 'Dates with Walnuts',
     category: 'Dates',
     description: 'Sinfully delicious! Premium dates infused with crunchy walnuts, offering a perfect balance of soft and crunchy, sweet and nutty.',
-    image: '/images/Highfields_Dates_with_walnuts.jpg',
+    image: `${import.meta.env.BASE_URL}images/Highfields_Dates_with_walnuts.jpg`,
     size: '400g',
     features: ['Gourmet Quality', 'Walnut Infused', 'Rich in Nutrients', 'Perfect Gift'],
     inStock: false,
@@ -37,7 +37,7 @@ const products = [
     name: 'Omani Seedless Dates',
     category: 'Dates',
     description: 'Sinfully delicious! Premium Omani dates, carefully selected and packaged. Natural sweetness and soft texture in every bite.',
-    image: '/images/Highfields_Omani_Seedless_Dates.jpg',
+    image: `${import.meta.env.BASE_URL}images/Highfields_Omani_Seedless_Dates.jpg`,
     size: '500g',
     features: ['Seedless', 'Omani Origin', 'Gourmet Quality', 'Naturally Sweet'],
     inStock: false,
@@ -105,7 +105,7 @@ const products = [
 
                 {product.inStock ? (
                   <a
-                    href="/contact"
+                    href={`${import.meta.env.BASE_URL}contact`}
                     class="block w-full text-center bg-[var(--burgundy)] text-white py-3 rounded-lg font-semibold hover:bg-[var(--brown)] transition-colors"
                   >
                     Contact for Orders
@@ -170,7 +170,7 @@ const products = [
 
                 {product.inStock ? (
                   <a
-                    href="/contact"
+                    href={`${import.meta.env.BASE_URL}contact`}
                     class="block w-full text-center bg-[var(--burgundy)] text-white py-3 rounded-lg font-semibold hover:bg-[var(--brown)] transition-colors"
                   >
                     Contact for Orders
@@ -199,7 +199,7 @@ const products = [
         Get in touch with us for orders, inquiries, or partnership opportunities
       </p>
       <a
-        href="/contact"
+        href={`${import.meta.env.BASE_URL}contact`}
         class="inline-block bg-[var(--burgundy)] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[var(--brown)] transition-colors"
       >
         Contact Us
