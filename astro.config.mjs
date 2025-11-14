@@ -5,7 +5,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://highfieldsfood.com',
+  site: 'https://hmdbhoira.github.io',
+  base: '/highfields-food',
   vite: {
     plugins: [tailwindcss()]
   }
