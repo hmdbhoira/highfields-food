@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://hmdbhoira.github.io',
-  base: process.env.npm_lifecycle_event === 'build' ? '/highfields-food' : '/',
+  base: process.env.npm_lifecycle_event === 'build' ? '/highfields-food/' : '/',
   vite: {
     plugins: [tailwindcss()]
   }
