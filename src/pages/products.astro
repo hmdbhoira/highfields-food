@@ -231,11 +231,37 @@ const products = [
     </div>
   </section>
 
+  <!-- Category Navigation -->
+  <div class="sticky top-16 sm:top-20 z-40 bg-white shadow-md py-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="#beverages" class="category-link px-6 py-2 rounded-full bg-[var(--cream)] text-[var(--dark-brown)] font-semibold hover:bg-[var(--burgundy)] hover:text-white transition-colors">
+          Beverages
+        </a>
+        <a href="#dates" class="category-link px-6 py-2 rounded-full bg-[var(--cream)] text-[var(--dark-brown)] font-semibold hover:bg-[var(--burgundy)] hover:text-white transition-colors">
+          Dates
+        </a>
+        <a href="#honey" class="category-link px-6 py-2 rounded-full bg-[var(--cream)] text-[var(--dark-brown)] font-semibold hover:bg-[var(--burgundy)] hover:text-white transition-colors">
+          Honey
+        </a>
+        <a href="#nuts" class="category-link px-6 py-2 rounded-full bg-[var(--cream)] text-[var(--dark-brown)] font-semibold hover:bg-[var(--burgundy)] hover:text-white transition-colors">
+          Nuts
+        </a>
+        <a href="#berries" class="category-link px-6 py-2 rounded-full bg-[var(--cream)] text-[var(--dark-brown)] font-semibold hover:bg-[var(--burgundy)] hover:text-white transition-colors">
+          Berries
+        </a>
+        <a href="#snacks" class="category-link px-6 py-2 rounded-full bg-[var(--cream)] text-[var(--dark-brown)] font-semibold hover:bg-[var(--burgundy)] hover:text-white transition-colors">
+          Snacks
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- Products Grid -->
   <section class="py-20 bg-[var(--cream)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Beverages Section -->
-      <div class="mb-16">
+      <div id="beverages" class="mb-16 scroll-mt-32">
         <h2 class="text-3xl font-bold text-[var(--dark-brown)] mb-8">Beverages</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           {products.filter(p => p.category === 'Beverages').map((product) => (
@@ -309,7 +335,7 @@ const products = [
       </div>
 
       <!-- Dates Section -->
-      <div class="mb-16">
+      <div id="dates" class="mb-16 scroll-mt-32">
         <h2 class="text-3xl font-bold text-[var(--dark-brown)] mb-8">Dates</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           {products.filter(p => p.category === 'Dates').map((product) => (
@@ -383,7 +409,7 @@ const products = [
       </div>
 
       <!-- Honey Section -->
-      <div class="mb-16">
+      <div id="honey" class="mb-16 scroll-mt-32">
         <h2 class="text-3xl font-bold text-[var(--dark-brown)] mb-8">Honey</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           {products.filter(p => p.category === 'Honey').map((product) => (
@@ -457,7 +483,7 @@ const products = [
       </div>
 
       <!-- Nuts Section -->
-      <div class="mb-16">
+      <div id="nuts" class="mb-16 scroll-mt-32">
         <h2 class="text-3xl font-bold text-[var(--dark-brown)] mb-8">Nuts</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           {products.filter(p => p.category === 'Nuts').map((product) => (
@@ -531,7 +557,7 @@ const products = [
       </div>
 
       <!-- Berries Section -->
-      <div class="mb-16">
+      <div id="berries" class="mb-16 scroll-mt-32">
         <h2 class="text-3xl font-bold text-[var(--dark-brown)] mb-8">Berries</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           {products.filter(p => p.category === 'Berries').map((product) => (
@@ -605,7 +631,7 @@ const products = [
       </div>
 
       <!-- Snacks Section -->
-      <div>
+      <div id="snacks" class="scroll-mt-32">
         <h2 class="text-3xl font-bold text-[var(--dark-brown)] mb-8">Snacks</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           {products.filter(p => p.category === 'Snacks').map((product) => (
