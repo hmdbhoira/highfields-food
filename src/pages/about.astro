@@ -56,8 +56,118 @@ import Layout from '../components/Layout.astro';
     </div>
   </section>
 
-  <!-- Mission & Values -->
+  <!-- Mission -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-bold text-[var(--dark-brown)] mb-6">Our Mission</h2>
+      <p class="text-xl text-[var(--brown)] leading-relaxed">
+        We believe that healthy living should not only be for those striving to be healthy, but also
+        those who want to make small changes towards a healthier lifestyle. Our objective is to make
+        nutritious healthy foods easily accessible, and to turn it into a way of life.
+      </p>
+    </div>
+  </section>
+
+  <!-- Global Sourcing -->
   <section class="py-20 bg-[var(--cream)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-[var(--dark-brown)] mb-4">Global Sourcing & Quality</h2>
+        <p class="text-lg text-[var(--brown)]">Premium ingredients from the finest sources worldwide</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+          <h3 class="text-2xl font-bold text-[var(--dark-brown)] mb-4">Quality First</h3>
+          <p class="text-[var(--brown)] leading-relaxed mb-4">
+            Every product goes through multiple stages of quality checks to ensure that only the best
+            reaches our customers. Our stringent filtering process guarantees products of the highest quality.
+          </p>
+          <ul class="space-y-2 text-[var(--brown)]">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-[var(--forest-green)] mr-2 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Gluten-free products</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-[var(--forest-green)] mr-2 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>No artificial supplements</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-[var(--forest-green)] mr-2 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>No additives or preservatives</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-[var(--forest-green)] mr-2 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Natural proteins & essential nutrients</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+          <h3 class="text-2xl font-bold text-[var(--dark-brown)] mb-4">Sourced Globally</h3>
+          <p class="text-[var(--brown)] leading-relaxed mb-4">
+            We source directly from trusted farms across the globe, ensuring that products that don't meet
+            our standards never reach the market.
+          </p>
+          <div class="grid grid-cols-2 gap-3 text-sm text-[var(--brown)]">
+            <div class="flex items-center">
+              <svg class="w-4 h-4 text-[var(--burgundy)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+              </svg>
+              USA
+            </div>
+            <div class="flex items-center">
+              <svg class="w-4 h-4 text-[var(--burgundy)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+              </svg>
+              Chile
+            </div>
+            <div class="flex items-center">
+              <svg class="w-4 h-4 text-[var(--burgundy)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+              </svg>
+              Turkey
+            </div>
+            <div class="flex items-center">
+              <svg class="w-4 h-4 text-[var(--burgundy)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+              </svg>
+              Australia
+            </div>
+            <div class="flex items-center">
+              <svg class="w-4 h-4 text-[var(--burgundy)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+              </svg>
+              Iran
+            </div>
+            <div class="flex items-center">
+              <svg class="w-4 h-4 text-[var(--burgundy)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+              </svg>
+              Saudi Arabia
+            </div>
+            <div class="flex items-center">
+              <svg class="w-4 h-4 text-[var(--burgundy)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+              </svg>
+              Thailand
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-4xl font-bold text-[var(--dark-brown)] mb-4">Our Values</h2>

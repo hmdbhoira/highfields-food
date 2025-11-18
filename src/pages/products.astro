@@ -2,45 +2,220 @@
 import Layout from '../components/Layout.astro';
 
 const products = [
+  // Beverages
   {
     id: 1,
     name: 'Dates Sparkling Drink',
     category: 'Beverages',
-    description: 'Bold, refreshing, and unexpected. Our signature sparkling drink takes the natural sweetness of dates and gives it a fizzy twist. A guilt-free pop with tradition meeting modern sparkle.',
+    description: 'Bold, refreshing, and unexpected. Our signature sparkling drink takes the natural sweetness of dates and gives it a fizzy twist.',
     image: `${import.meta.env.BASE_URL}images/Highfields_Dates_Sparkling_Drink.jpeg`,
     size: '250ml',
-    features: ['Date Palm Juice Concentrate', 'Carbonated', 'Premium Quality', 'Bold & Refreshing'],
-    inStock: true,
+    features: ['Date Palm Juice', 'Carbonated', 'Premium Quality', 'Bold & Refreshing'],
   },
   {
     id: 2,
     name: 'Dates Milkshake',
     category: 'Beverages',
-    description: 'Creamy, indulgent, and naturally sweet. Our dates milkshake is low in sugar but high in flavor, combining smooth milk with the rich taste of premium dates.',
+    description: 'Creamy, indulgent, and naturally sweet. Low in sugar but high in flavor, combining smooth milk with premium dates.',
     image: `${import.meta.env.BASE_URL}images/Highfields_Dates_Milkshake.jpeg`,
     size: '250ml',
-    features: ['Low in Sugar', 'Creamy Texture', 'Natural Sweetness', 'Ready to Drink'],
-    inStock: false,
+    features: ['Low Sugar', 'Creamy Texture', 'Natural Sweetness', 'Ready to Drink'],
   },
-  {
-    id: 3,
-    name: 'Dates with Walnuts',
-    category: 'Dates',
-    description: 'Sinfully delicious! Premium dates infused with crunchy walnuts, offering a perfect balance of soft and crunchy, sweet and nutty.',
-    image: `${import.meta.env.BASE_URL}images/Highfields_Dates_with_walnuts.jpg`,
-    size: '400g',
-    features: ['Gourmet Quality', 'Walnut Infused', 'Rich in Nutrients', 'Perfect Gift'],
-    inStock: false,
-  },
+
+  // Dates
   {
     id: 4,
+    name: 'Ajwa Dates',
+    category: 'Dates',
+    description: 'Soft, luscious, and fruity Ajwa dates from Saudi Arabia. Cultivated in Madina Tayyiba with a dark brown color and rich nutrients.',
+    image: `${import.meta.env.BASE_URL}images/Highfields_ajwa_dates.jpeg`,
+    size: '400g',
+    features: ['Saudi Arabian', 'Premium Quality', 'Rich in Nutrients', 'Naturally Sweet'],
+  },
+  {
+    id: 5,
+    name: 'Irani Dates',
+    category: 'Dates',
+    description: 'Medium-size, soft, dark brown to black Iranian dates with a fine texture and deliciously sweet, fruity flavor.',
+    image: `${import.meta.env.BASE_URL}images/Highfields_Irani_dates.jpeg`,
+    size: '340g',
+    features: ['Iranian Origin', 'Soft Texture', 'Rich Flavor', 'Premium Quality'],
+  },
+  {
+    id: 6,
     name: 'Omani Seedless Dates',
     category: 'Dates',
-    description: 'Sinfully delicious! Premium Omani dates, carefully selected and packaged. Natural sweetness and soft texture in every bite.',
+    description: 'Premium Omani dates harvested at peak ripeness. Gourmet quality with natural sweetness and soft texture.',
     image: `${import.meta.env.BASE_URL}images/Highfields_Omani_Seedless_Dates.jpg`,
     size: '500g',
     features: ['Seedless', 'Omani Origin', 'Gourmet Quality', 'Naturally Sweet'],
-    inStock: false,
+  },
+  {
+    id: 7,
+    name: 'Dates with Walnuts',
+    category: 'Dates',
+    description: 'Premium Omani dates meticulously filled with best California walnuts. Perfect balance of soft and crunchy, sweet and nutty.',
+    image: `${import.meta.env.BASE_URL}images/Highfields_Dates_with_walnuts.jpg`,
+    size: '400g',
+    features: ['Gourmet Quality', 'Walnut Infused', 'Rich in Nutrients', 'Perfect Gift'],
+    isOutOfStock: true,
+  },
+  {
+    id: 8,
+    name: 'Dates with Almonds',
+    category: 'Dates',
+    description: 'Fresh Omani dates paired with top quality California almonds. A delectable combination providing impressive health benefits.',
+    image: `${import.meta.env.BASE_URL}images/Highfields_dates_with_almods.jpeg`,
+    size: '400g',
+    features: ['Almond Filled', 'Premium Dates', 'Healthy Snack', 'Natural Energy'],
+    isOutOfStock: true,
+  },
+  {
+    id: 9,
+    name: 'Omani Dates',
+    category: 'Dates',
+    description: 'New harvest of premium Omani dates. Rich in sodium, potassium, and iron - one of the best guilt-free snacks.',
+    image: `${import.meta.env.BASE_URL}images/Highfields_Omani_Dates_new.jpeg`,
+    size: '340g',
+    features: ['Fresh Harvest', 'Rich in Minerals', 'Gourmet Quality', 'Guilt-Free'],
+    isUpcoming: true,
+  },
+
+  // Honey
+  {
+    id: 10,
+    name: 'Pure Honey',
+    category: 'Honey',
+    description: 'Finest nuts steeped in pure honey sourced from farms in North India. Best enjoyed with a spoon or as a topping.',
+    image: `${import.meta.env.BASE_URL}images/Highfields_honey_upcoming.jpeg`,
+    size: '450g',
+    features: ['Pure Honey', 'No Additives', 'Natural Sweetness', 'Premium Quality'],
+    isUpcoming: true,
+  },
+  {
+    id: 11,
+    name: 'Honey with Mixed Nuts',
+    category: 'Honey',
+    description: 'Premium mixed nuts immersed in pure honey. A healthy snack that combines natural sweetness with crunchy goodness.',
+    image: `${import.meta.env.BASE_URL}images/Highfields_Honey_with_mixed_nuts_upcoming.jpeg`,
+    size: '450g',
+    features: ['Mixed Nuts', 'Pure Honey', 'Energy Boost', 'No Preservatives'],
+    isUpcoming: true,
+  },
+  {
+    id: 12,
+    name: 'Honey with Nuts',
+    category: 'Honey',
+    description: 'Carefully selected nuts preserved in golden honey. Perfect balance of sweetness and nutrition.',
+    image: `${import.meta.env.BASE_URL}images/Highfields_Honey_with_nuts_upcoming.jpeg`,
+    size: '450g',
+    features: ['Premium Nuts', 'Golden Honey', 'Healthy Snack', 'Natural'],
+    isUpcoming: true,
+  },
+  {
+    id: 13,
+    name: 'Kashmir Acacia Honey',
+    category: 'Honey',
+    description: 'Rare acacia honey from the Kashmir valley. Light, delicate flavor with exceptional purity and health benefits.',
+    image: `${import.meta.env.BASE_URL}images/Highfields_Kashmir_acacia_honey_upcoming.jpeg`,
+    size: '450g',
+    features: ['Kashmir Origin', 'Acacia Honey', 'Pure & Natural', 'Premium Quality'],
+    isUpcoming: true,
+  },
+  {
+    id: 14,
+    name: 'Kesar Plum Lemon Honey',
+    category: 'Honey',
+    description: 'Exotic blend of saffron, plum, and lemon infused honey. Unique flavor profile with aromatic richness.',
+    image: `${import.meta.env.BASE_URL}images/Highfields_kesar_plum_lemon_honey_upcoming.jpeg`,
+    size: '450g',
+    features: ['Saffron Infused', 'Fruit Blend', 'Aromatic', 'Gourmet Quality'],
+    isUpcoming: true,
+  },
+  {
+    id: 15,
+    name: 'Sidr Forest Honey',
+    category: 'Honey',
+    description: 'Rare Sidr honey from wild forests. Known for its rich flavor, dark color, and exceptional medicinal properties.',
+    image: `${import.meta.env.BASE_URL}images/Highfields_Sidr_Forest_Honey_upcoming.jpeg`,
+    size: '450g',
+    features: ['Sidr Honey', 'Forest Origin', 'Medicinal Benefits', 'Premium Rare'],
+    isUpcoming: true,
+  },
+
+  // Nuts
+  {
+    id: 16,
+    name: 'California Walnuts',
+    category: 'Nuts',
+    description: 'Premium California walnuts, packed with omega-3 fatty acids and antioxidants. Crunchy and nutritious.',
+    image: `${import.meta.env.BASE_URL}images/Highfields_california_walnuts_upcoming.jpeg`,
+    size: '200g',
+    features: ['California Origin', 'Omega-3 Rich', 'Crunchy', 'Heart Healthy'],
+    isUpcoming: true,
+  },
+  {
+    id: 17,
+    name: 'Premium Almonds',
+    category: 'Nuts',
+    description: 'Top-quality California almonds. Rich in protein, fiber, and vitamin E. Perfect for snacking or cooking.',
+    image: `${import.meta.env.BASE_URL}images/Highfields_Premium_Almonds_upcoming.jpeg`,
+    size: '200g',
+    features: ['California Almonds', 'Vitamin E Rich', 'Protein Packed', 'Premium Quality'],
+    isUpcoming: true,
+  },
+  {
+    id: 18,
+    name: 'Premium Cashews',
+    category: 'Nuts',
+    description: 'Buttery, creamy cashews sourced from the finest farms. Rich in minerals and heart-healthy fats.',
+    image: `${import.meta.env.BASE_URL}images/Highfields_premium_cashews_upcoming.jpeg`,
+    size: '200g',
+    features: ['Creamy Texture', 'Mineral Rich', 'Heart Healthy', 'Premium Grade'],
+    isUpcoming: true,
+  },
+  {
+    id: 19,
+    name: 'Mixed Nuts',
+    category: 'Nuts',
+    description: 'Carefully curated blend of premium nuts. Perfect mix of almonds, cashews, walnuts, and more.',
+    image: `${import.meta.env.BASE_URL}images/Highfields_mixed_nuts_upcoming.jpeg`,
+    size: '200g',
+    features: ['Variety Mix', 'Premium Selection', 'Nutrient Dense', 'Perfect Snack'],
+    isUpcoming: true,
+  },
+
+  // Berries
+  {
+    id: 20,
+    name: 'Sliced Cranberry',
+    category: 'Berries',
+    description: 'Premium sliced cranberries, packed with antioxidants and natural tartness. Perfect for smoothies, desserts, or enjoying on their own.',
+    image: `${import.meta.env.BASE_URL}images/Highfields_sliced_cranberry.jpeg`,
+    size: '200g',
+    features: ['Antioxidant Rich', 'Natural Tartness', 'Versatile Use', 'Premium Quality'],
+  },
+  {
+    id: 21,
+    name: 'Mixed Berries',
+    category: 'Berries',
+    description: 'A vibrant blend of strawberries, blueberries, raspberries, and cherries. Bursting with flavor and nutrition.',
+    image: `${import.meta.env.BASE_URL}images/Highfields_mixed_berries.jpeg`,
+    size: '200g',
+    features: ['Variety Mix', 'Antioxidant Rich', 'Natural Sweetness', 'Nutrient Dense'],
+    isOutOfStock: true,
+  },
+
+  // Snacks
+  {
+    id: 22,
+    name: 'Chikkis',
+    category: 'Snacks',
+    description: 'Traditional Indian brittle made with jaggery and nuts. Crunchy, sweet, and packed with energy.',
+    image: `${import.meta.env.BASE_URL}images/Highfields_Chikkis_upcoming.jpeg`,
+    size: '250g',
+    features: ['Traditional Recipe', 'Jaggery Based', 'Crunchy', 'Energy Packed'],
+    isUpcoming: true,
   },
 ];
 ---
@@ -51,7 +226,7 @@ const products = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h1 class="text-5xl font-bold mb-4">Our Products</h1>
       <p class="text-xl opacity-90 max-w-2xl mx-auto">
-        Discover our range of premium dates and refreshing beverages, crafted with care and quality
+        Discover our range of premium dates, refreshing beverages, pure honey, berries, nuts, and healthy snacks
       </p>
     </div>
   </section>
@@ -64,11 +239,20 @@ const products = [
         <h2 class="text-3xl font-bold text-[var(--dark-brown)] mb-8">Beverages</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           {products.filter(p => p.category === 'Beverages').map((product) => (
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow">
-              {/* Out of Stock Badge */}
-              {!product.inStock && (
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow relative">
+              {/* Coming Soon Badge */}
+              {product.isUpcoming && (
                 <div class="absolute top-4 left-4 z-10">
-                  <span class="bg-[var(--brown)] text-white px-4 py-2 rounded-full text-sm font-semibold">
+                  <span class="bg-[var(--orange)] text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    Coming Soon
+                  </span>
+                </div>
+              )}
+
+              {/* Out of Stock Badge */}
+              {product.isOutOfStock && (
+                <div class="absolute top-4 left-4 z-10">
+                  <span class="bg-gray-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
                     Out of Stock
                   </span>
                 </div>
@@ -78,7 +262,7 @@ const products = [
                 <img
                   src={product.image}
                   alt={product.name}
-                  class={`max-h-full w-auto object-contain ${!product.inStock ? 'opacity-50' : ''}`}
+                  class={`h-80 w-80 object-contain ${product.isOutOfStock ? 'opacity-50' : ''}`}
                 />
               </div>
 
@@ -103,20 +287,20 @@ const products = [
                   ))}
                 </div>
 
-                {product.inStock ? (
-                  <a
-                    href={`${import.meta.env.BASE_URL}contact`}
-                    class="block w-full text-center bg-[var(--burgundy)] text-white py-3 rounded-lg font-semibold hover:bg-[var(--brown)] transition-colors"
-                  >
-                    Contact for Orders
-                  </a>
-                ) : (
+                {product.isOutOfStock ? (
                   <button
                     disabled
                     class="block w-full text-center bg-gray-400 text-white py-3 rounded-lg font-semibold cursor-not-allowed"
                   >
                     Currently Unavailable
                   </button>
+                ) : (
+                  <a
+                    href={`${import.meta.env.BASE_URL}contact`}
+                    class="block w-full text-center bg-[var(--burgundy)] text-white py-3 rounded-lg font-semibold hover:bg-[var(--brown)] transition-colors"
+                  >
+                    Contact for Orders
+                  </a>
                 )}
               </div>
             </div>
@@ -125,15 +309,24 @@ const products = [
       </div>
 
       <!-- Dates Section -->
-      <div>
+      <div class="mb-16">
         <h2 class="text-3xl font-bold text-[var(--dark-brown)] mb-8">Dates</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           {products.filter(p => p.category === 'Dates').map((product) => (
             <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow relative">
-              {/* Out of Stock Badge */}
-              {!product.inStock && (
+              {/* Coming Soon Badge */}
+              {product.isUpcoming && (
                 <div class="absolute top-4 left-4 z-10">
-                  <span class="bg-[var(--brown)] text-white px-4 py-2 rounded-full text-sm font-semibold">
+                  <span class="bg-[var(--orange)] text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    Coming Soon
+                  </span>
+                </div>
+              )}
+
+              {/* Out of Stock Badge */}
+              {product.isOutOfStock && (
+                <div class="absolute top-4 left-4 z-10">
+                  <span class="bg-gray-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
                     Out of Stock
                   </span>
                 </div>
@@ -143,7 +336,7 @@ const products = [
                 <img
                   src={product.image}
                   alt={product.name}
-                  class={`max-h-full w-auto object-contain ${!product.inStock ? 'opacity-50' : ''}`}
+                  class={`h-80 w-80 object-contain ${product.isOutOfStock ? 'opacity-50' : ''}`}
                 />
               </div>
 
@@ -168,20 +361,316 @@ const products = [
                   ))}
                 </div>
 
-                {product.inStock ? (
-                  <a
-                    href={`${import.meta.env.BASE_URL}contact`}
-                    class="block w-full text-center bg-[var(--burgundy)] text-white py-3 rounded-lg font-semibold hover:bg-[var(--brown)] transition-colors"
-                  >
-                    Contact for Orders
-                  </a>
-                ) : (
+                {product.isOutOfStock ? (
                   <button
                     disabled
                     class="block w-full text-center bg-gray-400 text-white py-3 rounded-lg font-semibold cursor-not-allowed"
                   >
                     Currently Unavailable
                   </button>
+                ) : (
+                  <a
+                    href={`${import.meta.env.BASE_URL}contact`}
+                    class="block w-full text-center bg-[var(--burgundy)] text-white py-3 rounded-lg font-semibold hover:bg-[var(--brown)] transition-colors"
+                  >
+                    Contact for Orders
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Honey Section -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold text-[var(--dark-brown)] mb-8">Honey</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {products.filter(p => p.category === 'Honey').map((product) => (
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow relative">
+              {/* Coming Soon Badge */}
+              {product.isUpcoming && (
+                <div class="absolute top-4 left-4 z-10">
+                  <span class="bg-[var(--orange)] text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    Coming Soon
+                  </span>
+                </div>
+              )}
+
+              {/* Out of Stock Badge */}
+              {product.isOutOfStock && (
+                <div class="absolute top-4 left-4 z-10">
+                  <span class="bg-gray-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    Out of Stock
+                  </span>
+                </div>
+              )}
+
+              <div class="relative h-96 bg-gradient-to-br from-[var(--cream)] to-white flex items-center justify-center p-8">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  class={`h-80 w-80 object-contain ${product.isOutOfStock ? 'opacity-50' : ''}`}
+                />
+              </div>
+
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <h3 class="text-2xl font-bold text-[var(--dark-brown)]">{product.name}</h3>
+                  <span class="text-sm text-[var(--brown)] bg-[var(--cream)] px-3 py-1 rounded-full">
+                    {product.size}
+                  </span>
+                </div>
+
+                <p class="text-[var(--brown)] mb-6">{product.description}</p>
+
+                <div class="space-y-2 mb-6">
+                  {product.features.map((feature) => (
+                    <div class="flex items-center text-sm text-[var(--brown)]">
+                      <svg class="w-5 h-5 text-[var(--forest-green)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                      </svg>
+                      {feature}
+                    </div>
+                  ))}
+                </div>
+
+                {product.isOutOfStock ? (
+                  <button
+                    disabled
+                    class="block w-full text-center bg-gray-400 text-white py-3 rounded-lg font-semibold cursor-not-allowed"
+                  >
+                    Currently Unavailable
+                  </button>
+                ) : (
+                  <a
+                    href={`${import.meta.env.BASE_URL}contact`}
+                    class="block w-full text-center bg-[var(--burgundy)] text-white py-3 rounded-lg font-semibold hover:bg-[var(--brown)] transition-colors"
+                  >
+                    Contact for Orders
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Nuts Section -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold text-[var(--dark-brown)] mb-8">Nuts</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {products.filter(p => p.category === 'Nuts').map((product) => (
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow relative">
+              {/* Coming Soon Badge */}
+              {product.isUpcoming && (
+                <div class="absolute top-4 left-4 z-10">
+                  <span class="bg-[var(--orange)] text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    Coming Soon
+                  </span>
+                </div>
+              )}
+
+              {/* Out of Stock Badge */}
+              {product.isOutOfStock && (
+                <div class="absolute top-4 left-4 z-10">
+                  <span class="bg-gray-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    Out of Stock
+                  </span>
+                </div>
+              )}
+
+              <div class="relative h-96 bg-gradient-to-br from-[var(--cream)] to-white flex items-center justify-center p-8">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  class={`h-80 w-80 object-contain ${product.isOutOfStock ? 'opacity-50' : ''}`}
+                />
+              </div>
+
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <h3 class="text-2xl font-bold text-[var(--dark-brown)]">{product.name}</h3>
+                  <span class="text-sm text-[var(--brown)] bg-[var(--cream)] px-3 py-1 rounded-full">
+                    {product.size}
+                  </span>
+                </div>
+
+                <p class="text-[var(--brown)] mb-6">{product.description}</p>
+
+                <div class="space-y-2 mb-6">
+                  {product.features.map((feature) => (
+                    <div class="flex items-center text-sm text-[var(--brown)]">
+                      <svg class="w-5 h-5 text-[var(--forest-green)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                      </svg>
+                      {feature}
+                    </div>
+                  ))}
+                </div>
+
+                {product.isOutOfStock ? (
+                  <button
+                    disabled
+                    class="block w-full text-center bg-gray-400 text-white py-3 rounded-lg font-semibold cursor-not-allowed"
+                  >
+                    Currently Unavailable
+                  </button>
+                ) : (
+                  <a
+                    href={`${import.meta.env.BASE_URL}contact`}
+                    class="block w-full text-center bg-[var(--burgundy)] text-white py-3 rounded-lg font-semibold hover:bg-[var(--brown)] transition-colors"
+                  >
+                    Contact for Orders
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Berries Section -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold text-[var(--dark-brown)] mb-8">Berries</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {products.filter(p => p.category === 'Berries').map((product) => (
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow relative">
+              {/* Coming Soon Badge */}
+              {product.isUpcoming && (
+                <div class="absolute top-4 left-4 z-10">
+                  <span class="bg-[var(--orange)] text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    Coming Soon
+                  </span>
+                </div>
+              )}
+
+              {/* Out of Stock Badge */}
+              {product.isOutOfStock && (
+                <div class="absolute top-4 left-4 z-10">
+                  <span class="bg-gray-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    Out of Stock
+                  </span>
+                </div>
+              )}
+
+              <div class="relative h-96 bg-gradient-to-br from-[var(--cream)] to-white flex items-center justify-center p-8">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  class={`h-80 w-80 object-contain ${product.isOutOfStock ? 'opacity-50' : ''}`}
+                />
+              </div>
+
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <h3 class="text-2xl font-bold text-[var(--dark-brown)]">{product.name}</h3>
+                  <span class="text-sm text-[var(--brown)] bg-[var(--cream)] px-3 py-1 rounded-full">
+                    {product.size}
+                  </span>
+                </div>
+
+                <p class="text-[var(--brown)] mb-6">{product.description}</p>
+
+                <div class="space-y-2 mb-6">
+                  {product.features.map((feature) => (
+                    <div class="flex items-center text-sm text-[var(--brown)]">
+                      <svg class="w-5 h-5 text-[var(--forest-green)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                      </svg>
+                      {feature}
+                    </div>
+                  ))}
+                </div>
+
+                {product.isOutOfStock ? (
+                  <button
+                    disabled
+                    class="block w-full text-center bg-gray-400 text-white py-3 rounded-lg font-semibold cursor-not-allowed"
+                  >
+                    Currently Unavailable
+                  </button>
+                ) : (
+                  <a
+                    href={`${import.meta.env.BASE_URL}contact`}
+                    class="block w-full text-center bg-[var(--burgundy)] text-white py-3 rounded-lg font-semibold hover:bg-[var(--brown)] transition-colors"
+                  >
+                    Contact for Orders
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Snacks Section -->
+      <div>
+        <h2 class="text-3xl font-bold text-[var(--dark-brown)] mb-8">Snacks</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {products.filter(p => p.category === 'Snacks').map((product) => (
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow relative">
+              {/* Coming Soon Badge */}
+              {product.isUpcoming && (
+                <div class="absolute top-4 left-4 z-10">
+                  <span class="bg-[var(--orange)] text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    Coming Soon
+                  </span>
+                </div>
+              )}
+
+              {/* Out of Stock Badge */}
+              {product.isOutOfStock && (
+                <div class="absolute top-4 left-4 z-10">
+                  <span class="bg-gray-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    Out of Stock
+                  </span>
+                </div>
+              )}
+
+              <div class="relative h-96 bg-gradient-to-br from-[var(--cream)] to-white flex items-center justify-center p-8">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  class={`h-80 w-80 object-contain ${product.isOutOfStock ? 'opacity-50' : ''}`}
+                />
+              </div>
+
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <h3 class="text-2xl font-bold text-[var(--dark-brown)]">{product.name}</h3>
+                  <span class="text-sm text-[var(--brown)] bg-[var(--cream)] px-3 py-1 rounded-full">
+                    {product.size}
+                  </span>
+                </div>
+
+                <p class="text-[var(--brown)] mb-6">{product.description}</p>
+
+                <div class="space-y-2 mb-6">
+                  {product.features.map((feature) => (
+                    <div class="flex items-center text-sm text-[var(--brown)]">
+                      <svg class="w-5 h-5 text-[var(--forest-green)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                      </svg>
+                      {feature}
+                    </div>
+                  ))}
+                </div>
+
+                {product.isOutOfStock ? (
+                  <button
+                    disabled
+                    class="block w-full text-center bg-gray-400 text-white py-3 rounded-lg font-semibold cursor-not-allowed"
+                  >
+                    Currently Unavailable
+                  </button>
+                ) : (
+                  <a
+                    href={`${import.meta.env.BASE_URL}contact`}
+                    class="block w-full text-center bg-[var(--burgundy)] text-white py-3 rounded-lg font-semibold hover:bg-[var(--brown)] transition-colors"
+                  >
+                    Contact for Orders
+                  </a>
                 )}
               </div>
             </div>
