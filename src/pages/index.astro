@@ -8,7 +8,7 @@ import Layout from '../components/Layout.astro';
     <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgc3Ryb2tlPSIjOEIyNjM1IiBzdHJva2Utb3BhY2l0eT0iLjA1Ii8+PC9nPjwvc3ZnPg==')] opacity-40"></div>
 
     <div class="w-full max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" style="column-gap: clamp(3rem, 8rem, 8rem);">
         <!-- Text Content -->
         <div class="text-center lg:text-left flex flex-col justify-center" style="animation: fadeInUp 0.8s ease-out;">
           <div class="inline-block px-12 py-4 bg-[var(--burgundy)] text-white text-sm font-semibold rounded-full mb-8 shadow-lg mx-auto lg:mx-0 w-fit">
@@ -25,13 +25,13 @@ import Layout from '../components/Layout.astro';
           <div class="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
             <a
               href={`${import.meta.env.BASE_URL}products`}
-              class="inline-block bg-[var(--burgundy)] text-white px-16 py-6 rounded-full font-bold text-lg hover:bg-[var(--brown)] transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl text-center"
+              class="inline-block bg-[var(--burgundy)] text-white px-10 py-6 rounded-full font-bold text-lg hover:bg-[var(--brown)] transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl text-center whitespace-nowrap"
             >
               Explore Products
             </a>
             <a
               href={`${import.meta.env.BASE_URL}about`}
-              class="inline-block border-3 border-[var(--burgundy)] text-[var(--burgundy)] px-16 py-6 rounded-full font-bold text-lg hover:bg-[var(--burgundy)] hover:text-white transform hover:scale-105 transition-all duration-300 text-center"
+              class="inline-block border-3 border-[var(--burgundy)] text-[var(--burgundy)] px-10 py-6 rounded-full font-bold text-lg hover:bg-[var(--burgundy)] hover:text-white transform hover:scale-105 transition-all duration-300 text-center whitespace-nowrap"
               style="border-width: 3px;"
             >
               Our Story
@@ -41,24 +41,23 @@ import Layout from '../components/Layout.astro';
 
         <!-- Product Image -->
         <div class="relative flex items-center justify-center" style="animation: fadeInRight 1s ease-out;">
-          <div id="product-media-container" class="relative w-full max-w-md lg:max-w-lg mx-auto cursor-pointer aspect-[5/6]">
+          <div id="product-media-container" class="relative w-full mx-auto cursor-pointer aspect-[5/6]">
             <!-- Decorative circle background -->
             <div class="absolute inset-0 bg-gradient-to-br from-[var(--burgundy)]/20 to-[var(--orange)]/20 rounded-full blur-3xl scale-110"></div>
             <div class="absolute -inset-4 bg-[var(--burgundy)]/10 rounded-full blur-2xl animate-pulse"></div>
 
             <img
               id="product-image"
-              src={`${import.meta.env.BASE_URL}images/Highfields-sparkling-gemini.png`}
+              src={`${import.meta.env.BASE_URL}images/Highfields_sparkling_drink_date_animation_last_frame.png`}
               alt="Highfields Dates Sparkling Drink"
               class="absolute inset-0 z-10 w-full h-full object-cover object-top drop-shadow-2xl transition-all duration-500 ease-out rounded-3xl"
               style="filter: drop-shadow(0 25px 50px rgba(139, 38, 53, 0.3));"
             />
             <video
               id="product-video"
-              src={`${import.meta.env.BASE_URL}videos/Sparkling_drink_on_water.mp4`}
+              src={`${import.meta.env.BASE_URL}videos/Highfields_sparkling_drink_date_animation.mp4`}
               class="absolute inset-0 z-20 w-full h-full object-cover drop-shadow-2xl transition-all duration-500 ease-out opacity-0 pointer-events-none rounded-3xl"
               style="filter: drop-shadow(0 25px 50px rgba(139, 38, 53, 0.3)); object-position: center -45%;"
-              muted
               playsinline
             ></video>
           </div>
@@ -305,6 +304,395 @@ import Layout from '../components/Layout.astro';
       </div>
     </div>
   </section>
+
+  <!-- What People Say Section -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="inline-block px-12 py-4 bg-[var(--burgundy)]/10 text-[var(--burgundy)] text-sm font-semibold rounded-full mb-4">
+          CUSTOMER REVIEWS
+        </span>
+        <h2 class="text-5xl md:text-6xl font-black text-[var(--dark-brown)] mb-6">What People Say</h2>
+        <p class="text-xl text-[var(--brown)] max-w-2xl mx-auto">Hear from our happy customers across India</p>
+      </div>
+
+      <div class="relative">
+        <!-- Reviews Carousel -->
+        <div class="overflow-hidden">
+          <div id="reviews-track" class="flex transition-transform duration-500 ease-out">
+            <!-- Review 1 -->
+            <div class="min-w-full px-4 md:px-8">
+              <div class="bg-white rounded-lg p-8 md:p-12 max-w-4xl mx-auto text-center border border-gray-100 shadow-lg">
+                <div class="flex justify-center mb-6">
+                  <svg class="w-6 h-6 text-[var(--burgundy)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-6 h-6 text-[var(--burgundy)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-6 h-6 text-[var(--burgundy)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-6 h-6 text-[var(--burgundy)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-6 h-6 text-[var(--burgundy)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                </div>
+                <p class="text-xl md:text-2xl text-[var(--dark-brown)] mb-8 leading-relaxed">
+                  "The Dates Sparkling Drink is absolutely refreshing! Perfect blend of natural sweetness and fizz. My family loves it, and we always keep a few bottles in the fridge. Great value for money!"
+                </p>
+                <p class="text-lg font-semibold text-[var(--burgundy)] uppercase tracking-wide">PRIYA SHARMA</p>
+              </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="min-w-full px-4 md:px-8">
+              <div class="bg-white rounded-lg p-8 md:p-12 max-w-4xl mx-auto text-center border border-gray-100 shadow-lg">
+                <div class="flex justify-center mb-6">
+                  <svg class="w-6 h-6 text-[var(--burgundy)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-6 h-6 text-[var(--burgundy)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-6 h-6 text-[var(--burgundy)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-6 h-6 text-[var(--burgundy)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-6 h-6 text-[var(--burgundy)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                </div>
+                <p class="text-xl md:text-2xl text-[var(--dark-brown)] mb-8 leading-relaxed">
+                  "Highfields dates are premium quality! Rich flavor and perfectly fresh. I serve them to guests and everyone asks where I bought them. Highly recommend for anyone who appreciates authentic taste."
+                </p>
+                <p class="text-lg font-semibold text-[var(--burgundy)] uppercase tracking-wide">RAJESH PATEL</p>
+              </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="min-w-full px-4 md:px-8">
+              <div class="bg-white rounded-lg p-8 md:p-12 max-w-4xl mx-auto text-center border border-gray-100 shadow-lg">
+                <div class="flex justify-center mb-6">
+                  <svg class="w-6 h-6 text-[var(--burgundy)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-6 h-6 text-[var(--burgundy)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-6 h-6 text-[var(--burgundy)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-6 h-6 text-[var(--burgundy)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-6 h-6 text-[var(--burgundy)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                </div>
+                <p class="text-xl md:text-2xl text-[var(--dark-brown)] mb-8 leading-relaxed">
+                  "Finally found a healthy drink that tastes amazing! The sparkling dates drink is my go-to beverage now. Love how it's made with natural ingredients. Perfect for any time of the day!"
+                </p>
+                <p class="text-lg font-semibold text-[var(--burgundy)] uppercase tracking-wide">ANANYA REDDY</p>
+              </div>
+            </div>
+
+            <!-- Review 4 -->
+            <div class="min-w-full px-4 md:px-8">
+              <div class="bg-white rounded-lg p-8 md:p-12 max-w-4xl mx-auto text-center border border-gray-100 shadow-lg">
+                <div class="flex justify-center mb-6">
+                  <svg class="w-6 h-6 text-[var(--burgundy)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-6 h-6 text-[var(--burgundy)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-6 h-6 text-[var(--burgundy)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-6 h-6 text-[var(--burgundy)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-6 h-6 text-[var(--burgundy)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                </div>
+                <p class="text-xl md:text-2xl text-[var(--dark-brown)] mb-8 leading-relaxed">
+                  "Best dates I've ever tasted! Soft, sweet, and absolutely delicious. Highfields has become my trusted brand for quality products. Worth every rupee!"
+                </p>
+                <p class="text-lg font-semibold text-[var(--burgundy)] uppercase tracking-wide">VIKRAM SINGH</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button
+          id="prev-review"
+          class="absolute left-0 top-1/2 -translate-y-1/2 bg-white text-[var(--dark-brown)] w-12 h-12 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 !flex items-center justify-center z-10"
+          aria-label="Previous review"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <button
+          id="next-review"
+          class="absolute right-0 top-1/2 -translate-y-1/2 bg-white text-[var(--dark-brown)] w-12 h-12 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 !flex items-center justify-center z-10"
+          aria-label="Next review"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+
+        <!-- Pagination Dots -->
+        <div class="flex justify-center gap-3 mt-8">
+          <button class="review-dot w-3 h-3 rounded-full bg-[var(--burgundy)]" data-index="0"></button>
+          <button class="review-dot w-3 h-3 rounded-full bg-gray-300" data-index="1"></button>
+          <button class="review-dot w-3 h-3 rounded-full bg-gray-300" data-index="2"></button>
+          <button class="review-dot w-3 h-3 rounded-full bg-gray-300" data-index="3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Available At Section -->
+  <section class="py-24 bg-gradient-to-b from-[var(--cream)] to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="inline-block px-12 py-4 bg-[var(--forest-green)]/10 text-[var(--forest-green)] text-sm font-semibold rounded-full mb-4">
+          FIND US
+        </span>
+        <h2 class="text-5xl md:text-6xl font-black text-[var(--dark-brown)] mb-6">We're Available At</h2>
+        <p class="text-xl text-[var(--brown)] max-w-2xl mx-auto">Order from your favorite delivery platform</p>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-16 py-8">
+        <div class="overflow-hidden">
+          <div id="stores-track" class="flex gap-6 transition-transform duration-500 ease-out py-2">
+            <!-- First set of stores -->
+            <div class="flex-shrink-0 w-48 sm:w-56 md:w-64">
+              <div class="flex items-center justify-center p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 h-36">
+                <img src={`${import.meta.env.BASE_URL}images/zepto-logo.png`} alt="Zepto" class="w-full h-full object-contain" />
+              </div>
+            </div>
+            <div class="flex-shrink-0 w-48 sm:w-56 md:w-64">
+              <div class="flex items-center justify-center p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 h-36">
+                <img src={`${import.meta.env.BASE_URL}images/instamart-logo.png`} alt="InstaMArt" class="w-full h-full object-contain" />
+              </div>
+            </div>
+            <div class="flex-shrink-0 w-48 sm:w-56 md:w-64">
+              <div class="flex items-center justify-center p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 h-36">
+                <img src={`${import.meta.env.BASE_URL}images/blinkit-logo.png`} alt="Blinkit" class="w-full h-full object-contain" />
+              </div>
+            </div>
+            <div class="flex-shrink-0 w-48 sm:w-56 md:w-64">
+              <div class="flex items-center justify-center p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 h-36">
+                <img src={`${import.meta.env.BASE_URL}images/freshpik-logo.webp`} alt="Reliance FreshPik" class="w-full h-full object-contain" />
+              </div>
+            </div>
+            <div class="flex-shrink-0 w-48 sm:w-56 md:w-64">
+              <div class="flex items-center justify-center p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 h-36">
+                <img src={`${import.meta.env.BASE_URL}images/amazon-logo.svg`} alt="Amazon" class="w-full h-full object-contain" />
+              </div>
+            </div>
+            <div class="flex-shrink-0 w-48 sm:w-56 md:w-64">
+              <div class="flex items-center justify-center p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 h-36">
+                <img src={`${import.meta.env.BASE_URL}images/dmart-logo.jpg`} alt="DMart Ready" class="w-full h-full object-contain" />
+              </div>
+            </div>
+            <div class="flex-shrink-0 w-48 sm:w-56 md:w-64">
+              <div class="flex items-center justify-center p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 h-36">
+                <img src={`${import.meta.env.BASE_URL}images/reliance-signature-logo.webp`} alt="Reliance Signature" class="w-full h-full object-contain" />
+              </div>
+            </div>
+            <!-- Duplicate set for infinite loop -->
+            <div class="flex-shrink-0 w-48 sm:w-56 md:w-64">
+              <div class="flex items-center justify-center p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 h-36">
+                <img src={`${import.meta.env.BASE_URL}images/zepto-logo.png`} alt="Zepto" class="w-full h-full object-contain" />
+              </div>
+            </div>
+            <div class="flex-shrink-0 w-48 sm:w-56 md:w-64">
+              <div class="flex items-center justify-center p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 h-36">
+                <img src={`${import.meta.env.BASE_URL}images/instamart-logo.png`} alt="InstaMArt" class="w-full h-full object-contain" />
+              </div>
+            </div>
+            <div class="flex-shrink-0 w-48 sm:w-56 md:w-64">
+              <div class="flex items-center justify-center p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 h-36">
+                <img src={`${import.meta.env.BASE_URL}images/blinkit-logo.png`} alt="Blinkit" class="w-full h-full object-contain" />
+              </div>
+            </div>
+            <div class="flex-shrink-0 w-48 sm:w-56 md:w-64">
+              <div class="flex items-center justify-center p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 h-36">
+                <img src={`${import.meta.env.BASE_URL}images/freshpik-logo.webp`} alt="Reliance FreshPik" class="w-full h-full object-contain" />
+              </div>
+            </div>
+            <div class="flex-shrink-0 w-48 sm:w-56 md:w-64">
+              <div class="flex items-center justify-center p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 h-36">
+                <img src={`${import.meta.env.BASE_URL}images/amazon-logo.svg`} alt="Amazon" class="w-full h-full object-contain" />
+              </div>
+            </div>
+            <div class="flex-shrink-0 w-48 sm:w-56 md:w-64">
+              <div class="flex items-center justify-center p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 h-36">
+                <img src={`${import.meta.env.BASE_URL}images/dmart-logo.jpg`} alt="DMart Ready" class="w-full h-full object-contain" />
+              </div>
+            </div>
+            <div class="flex-shrink-0 w-48 sm:w-56 md:w-64">
+              <div class="flex items-center justify-center p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 h-36">
+                <img src={`${import.meta.env.BASE_URL}images/reliance-signature-logo.webp`} alt="Reliance Signature" class="w-full h-full object-contain" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button
+          id="prev-store"
+          class="absolute left-0 top-1/2 -translate-y-1/2 bg-white text-[var(--dark-brown)] w-12 h-12 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 !flex items-center justify-center z-10"
+          aria-label="Previous stores"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <button
+          id="next-store"
+          class="absolute right-0 top-1/2 -translate-y-1/2 bg-white text-[var(--dark-brown)] w-12 h-12 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 !flex items-center justify-center z-10"
+          aria-label="Next stores"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Carousel Script -->
+  <script>
+    let currentReview = 0;
+    const totalReviews = 4;
+    const track = document.getElementById('reviews-track');
+    const dots = document.querySelectorAll('.review-dot');
+    const prevBtn = document.getElementById('prev-review');
+    const nextBtn = document.getElementById('next-review');
+    let reviewInterval;
+
+    function updateCarousel() {
+      if (track) {
+        track.style.transform = `translateX(-${currentReview * 100}%)`;
+      }
+
+      dots.forEach((dot, index) => {
+        if (index === currentReview) {
+          dot.classList.remove('bg-gray-300');
+          dot.classList.add('bg-[var(--burgundy)]');
+        } else {
+          dot.classList.remove('bg-[var(--burgundy)]');
+          dot.classList.add('bg-gray-300');
+        }
+      });
+    }
+
+    function startAutoAdvance() {
+      clearInterval(reviewInterval);
+      reviewInterval = setInterval(() => {
+        currentReview = (currentReview + 1) % totalReviews;
+        updateCarousel();
+      }, 5000);
+    }
+
+    prevBtn?.addEventListener('click', () => {
+      currentReview = (currentReview - 1 + totalReviews) % totalReviews;
+      updateCarousel();
+      startAutoAdvance();
+    });
+
+    nextBtn?.addEventListener('click', () => {
+      currentReview = (currentReview + 1) % totalReviews;
+      updateCarousel();
+      startAutoAdvance();
+    });
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        currentReview = parseInt(dot.dataset.index || '0');
+        updateCarousel();
+        startAutoAdvance();
+      });
+    });
+
+    // Start auto-advance
+    startAutoAdvance();
+  </script>
+
+  <!-- Stores Carousel Script -->
+  <script>
+    const storesTrack = document.getElementById('stores-track');
+    const prevStoreBtn = document.getElementById('prev-store');
+    const nextStoreBtn = document.getElementById('next-store');
+    let scrollPosition = 0;
+    const scrollAmount = 280; // Width of one card + gap
+    let storeInterval;
+    let isScrolling = false;
+
+    if (storesTrack) {
+      const singleSetWidth = storesTrack.scrollWidth / 2; // Width of one complete set
+
+      function scroll(direction) {
+        if (isScrolling) return;
+        isScrolling = true;
+
+        scrollPosition += direction * scrollAmount;
+        storesTrack.style.transform = `translateX(-${scrollPosition}px)`;
+
+        // Seamlessly reset position for infinite loop
+        setTimeout(() => {
+          if (scrollPosition >= singleSetWidth) {
+            // Disable transition, reset position, re-enable transition
+            storesTrack.style.transition = 'none';
+            scrollPosition = 0;
+            storesTrack.style.transform = `translateX(-${scrollPosition}px)`;
+
+            // Force reflow
+            storesTrack.offsetHeight;
+            storesTrack.style.transition = 'transform 500ms ease-out';
+          } else if (scrollPosition < 0) {
+            storesTrack.style.transition = 'none';
+            scrollPosition = singleSetWidth - scrollAmount;
+            storesTrack.style.transform = `translateX(-${scrollPosition}px)`;
+
+            storesTrack.offsetHeight;
+            storesTrack.style.transition = 'transform 500ms ease-out';
+          }
+          isScrolling = false;
+        }, 500);
+      }
+
+      function startAutoAdvance() {
+        clearInterval(storeInterval);
+        storeInterval = setInterval(() => scroll(1), 3000);
+      }
+
+      prevStoreBtn?.addEventListener('click', () => {
+        scroll(-1);
+        startAutoAdvance();
+      });
+
+      nextStoreBtn?.addEventListener('click', () => {
+        scroll(1);
+        startAutoAdvance();
+      });
+
+      // Start auto-advance
+      startAutoAdvance();
+    }
+  </script>
 
   <!-- CTA Section -->
   <section class="relative py-32 bg-gradient-to-r from-[var(--burgundy)] via-[var(--brown)] to-[var(--burgundy)] text-white overflow-hidden">
